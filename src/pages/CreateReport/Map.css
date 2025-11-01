@@ -1,0 +1,85 @@
+/* Estilos del contenedor del mapa */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #1a202c;
+  z-index: 0;
+}
+
+/* Estilos de los tiles del mapa */
+.leaflet-tile {
+  filter: brightness(0.7) invert(1) contrast(0.9) saturate(0.8) hue-rotate(180deg);
+  -webkit-filter: brightness(0.7) invert(1) contrast(0.9) saturate(0.8) hue-rotate(180deg);
+}
+
+/* Estilos del marcador de usuario */
+.user-location-marker {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease;
+}
+
+.user-location-marker:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(236, 72, 21, 0.8));
+}
+
+/* Estilos del popup */
+.leaflet-popup-content-wrapper {
+  background: rgba(26, 32, 44, 0.9);
+  color: #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.leaflet-popup-tip {
+  background: rgba(26, 32, 44, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  border-left: none;
+}
+
+/* Ocultar atribución de Leaflet */
+.leaflet-control-attribution {
+  display: none;
+}
+
+/* Estilos para el control de zoom */
+.leaflet-bar {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(26, 32, 44, 0.8) !important;
+  backdrop-filter: blur(4px);
+}
+
+.leaflet-bar a {
+  background-color: rgba(26, 32, 44, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #e2e8f0 !important;
+  transition: all 0.2s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: rgba(44, 55, 74, 0.9) !important;
+  color: #fff !important;
+}
+
+/* Ajustes para el mapa en modo oscuro */
+.leaflet-container .leaflet-control-attribution {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: #a0aec0 !important;
+  font-size: 10px;
+}
+
+/* Mejoras de rendimiento para el renderizado del mapa */
+.leaflet-zoom-animated {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
