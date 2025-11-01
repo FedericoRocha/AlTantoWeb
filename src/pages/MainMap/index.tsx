@@ -241,27 +241,27 @@ const MainMap = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div 
-              className="fixed inset-0 bg-black/50 z-30"
+              className="fixed inset-0 bg-black/70 z-30"
               onClick={() => setIsMenuOpen(false)}
             ></div>
-            <div className="fixed top-0 left-0 h-full w-72 bg-gray-800 border-r border-gray-700 z-40 transform transition-transform duration-300 ease-in-out">
-              <div className="p-4 border-b border-gray-700 flex justify-between items-center">
-                <h2 className="text-xl font-bold">Menú</h2>
+            <div className="fixed top-0 left-0 h-full w-72 bg-gray-900 border-r border-gray-700 z-40 transform transition-transform duration-300 ease-in-out shadow-2xl">
+              <div className="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-900">
+                <h2 className="text-xl font-bold text-white">Menú</h2>
                 <button 
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-1 rounded-full hover:bg-gray-700"
+                  className="p-1 rounded-full hover:bg-gray-800 text-gray-300 hover:text-white transition-colors"
                   aria-label="Cerrar menú"
                 >
-                  <X className="h-6 w-6 text-gray-300" />
+                  <X className="h-6 w-6" />
                 </button>
               </div>
-              <nav className="p-2">
+              <nav className="p-2 bg-gray-900">
                 <button 
                   onClick={() => {
                     navigate('/profile');
                     setIsMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-700/50 flex items-center text-gray-200"
+                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800/90 flex items-center text-gray-200 transition-colors"
                 >
                   <User className="h-5 w-5 mr-3 text-orange-400" />
                   Mi perfil
@@ -271,7 +271,7 @@ const MainMap = () => {
                     navigate('/reports');
                     setIsMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-700/50 flex items-center text-gray-200"
+                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800/90 flex items-center text-gray-200 transition-colors"
                 >
                   <AlertTriangle className="h-5 w-5 mr-3 text-orange-400" />
                   Mis reportes
@@ -281,7 +281,7 @@ const MainMap = () => {
                     navigate('/settings');
                     setIsMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-700/50 flex items-center text-gray-200"
+                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800/90 flex items-center text-gray-200 transition-colors"
                 >
                   <Settings className="h-5 w-5 mr-3 text-orange-400" />
                   Configuración
@@ -291,7 +291,7 @@ const MainMap = () => {
                     navigate('/help');
                     setIsMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-700/50 flex items-center text-gray-200"
+                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800/90 flex items-center text-gray-200 transition-colors"
                 >
                   <HelpCircle className="h-5 w-5 mr-3 text-orange-400" />
                   Ayuda
@@ -451,6 +451,7 @@ const MainMap = () => {
           <span className="text-xs mt-1">Reportar</span>
         </button>
         <button 
+          onClick={() => navigate('/notifications')}
           className="flex flex-col items-center text-gray-300 hover:text-white p-2 rounded-lg w-full max-w-[100px] hover:bg-gray-700/50 transition-colors relative"
           aria-label="Notificaciones"
         >

@@ -8,6 +8,7 @@ import CreateReport from './pages/CreateReport';
 import ReportForm from './pages/ReportForm';
 import ReportLoaded from './pages/ReportLoaded';
 import Profile from './pages/Profile';
+import Notifications from './pages/Notifications';
 
 // Type for the authentication context
 type AuthContextType = {
@@ -134,6 +135,14 @@ const App: React.FC = () => {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <ProtectedRoute>
+                <Notifications />
               </ProtectedRoute>
             }
           />

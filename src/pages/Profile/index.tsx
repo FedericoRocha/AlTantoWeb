@@ -67,7 +67,7 @@ const Profile = () => {
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
-          <h1 className="text-xl font-semibold">Mi Perfil</h1>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">Mi Perfil</h1>
         </div>
       </header>
 

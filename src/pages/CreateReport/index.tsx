@@ -126,7 +126,7 @@ const CreateReport = () => {
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-          <h1 className="text-xl font-semibold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">
             Crear reporte
           </h1>
         </div>

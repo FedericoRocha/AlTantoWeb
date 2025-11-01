@@ -136,7 +136,7 @@ const ReportLoaded = () => {
           </div>
           
           {/* Success Message */}
-          <h1 className="text-2xl font-bold text-white mb-2">¡Reporte Enviado!</h1>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent mb-2">¡Reporte Enviado!</h1>
           <p className="text-gray-300 mb-8 max-w-md">
             Tu reporte ha sido registrado correctamente y está siendo procesado por nuestro equipo.
           </p>
