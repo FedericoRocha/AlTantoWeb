@@ -16,12 +16,6 @@ const Home = () => {
               className="h-10"
             />
           </div>
-          <button 
-            onClick={() => navigate('/login')}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-          >
-            Iniciar sesión
-          </button>
         </div>
       </header>
 
@@ -43,18 +37,18 @@ const Home = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <button
-              onClick={() => navigate('/register')}
-              className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors"
-            >
-              <UserPlus className="h-5 w-5" />
-              Crear cuenta
-            </button>
-            <button
               onClick={() => navigate('/login')}
-              className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500/10 font-medium py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors"
             >
               <LogIn className="h-5 w-5" />
               Iniciar sesión
+            </button>
+            <button
+              onClick={() => navigate('/register')}
+              className="bg-transparent hover:bg-orange-500/10 border-2 border-orange-500 text-orange-500 font-medium py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors"
+            >
+              <UserPlus className="h-5 w-5" />
+              Crear cuenta
             </button>
           </div>
 
