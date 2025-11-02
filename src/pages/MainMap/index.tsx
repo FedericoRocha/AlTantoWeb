@@ -145,7 +145,7 @@ const MainMap = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white">
+    <div className="flex flex-col min-h-screen bg-gray-900 text-white page-with-bottom-nav">
       {/* Navbar */}
       <header className="bg-gray-800/80 backdrop-blur-sm p-4 border-b border-gray-700 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -311,7 +311,7 @@ const MainMap = () => {
       </header>
 
       {/* Main Content */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex-1 flex flex-col relative overflow-hidden">
         {/* Sidebar (hidden on mobile) */}
         <aside className={`bg-gray-800 w-72 border-r border-gray-700 hidden md:block overflow-y-auto`}>
           <div className="p-4">
@@ -356,23 +356,23 @@ const MainMap = () => {
           {/* Contenedor del mapa */}
           <div 
             ref={mapContainerRef} 
-            className="absolute inset-0 z-0"
-            style={{ backgroundColor: '#1a202c' }}
+            className="absolute inset-0 w-full h-[calc(100vh-56px)] md:h-full" 
+            style={{ top: '56px', bottom: '64px' }}
           >
-            {isMapLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-900 z-10">
-                <div className="animate-pulse flex flex-col items-center">
-                  <MapPin className="h-12 w-12 text-orange-500 mb-2 animate-bounce" />
-                  <p className="text-gray-400">Cargando mapa...</p>
+            {isMapLoading && !mapError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 z-10">
+                <div className="animate-pulse text-center">
+                  <div className="w-16 h-16 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                  <p className="mt-4 text-gray-300">Cargando mapa...</p>
                 </div>
               </div>
             )}
             {mapError && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-900 z-10">
-                <div className="text-center p-6 max-w-sm">
-                  <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-white mb-2">Error al cargar el mapa</h3>
-                  <p className="text-gray-400 mb-4">No se pudo cargar el mapa en este momento. Por favor, inténtalo de nuevo más tarde.</p>
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 z-10 p-4">
+                <div className="text-center max-w-md">
+                  <AlertTriangle className="h-12 w-12 text-red-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-white mb-2">Error al cargar el mapa</h3>
+                  <p className="text-gray-300 mb-6">No se pudo cargar el mapa. Por favor, verifica tu conexión a internet e inténtalo de nuevo.</p>
                   <button 
                     onClick={() => window.location.reload()}
                     className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
@@ -434,7 +434,7 @@ const MainMap = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="bg-gray-800/80 backdrop-blur-sm border-t border-gray-700 flex justify-around p-2">
+      <nav className="bottom-nav fixed bottom-0 left-0 right-0 bg-gray-800/95 backdrop-blur-sm border-t border-gray-700 flex justify-around p-2 z-50">
         <button 
           className="flex flex-col items-center text-orange-500 p-2 rounded-lg w-full max-w-[100px] hover:bg-gray-700/50 transition-colors"
           aria-label="Mapa"
